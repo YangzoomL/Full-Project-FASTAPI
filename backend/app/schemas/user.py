@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 
 #what we want to receive from the user when they sign up
-class UserBase(BaseModel):
+class UserCreate(BaseModel):
     email: str
     name: str
     age: int
