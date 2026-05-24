@@ -6,7 +6,7 @@ router = APIRouter(prefix="/users", tags=["users"])
 
 #post
 @router.post("/", response_model=UserResponse, status_code=201)
-def create_user(user: UserCreate) -> UserResponse:
+def create_user(user: UserCreate):
     created_user = user_service.create_user(user)
 
     # if the user could not be created, raise an exception

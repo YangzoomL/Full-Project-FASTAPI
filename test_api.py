@@ -15,10 +15,10 @@ def test_create_user():
     """Create a user and verify the response."""
 
     import time 
-    unique_email = f"alice_{int(time.time())}@example.com"  # Generate a unique email using the current timestamp
+    unique_email = f"alice_{int(time.time())}@example.com" # Generate a unique email using the current timestamp
     response = requests.post(
         f"{BASE_URL}/users/",
-        json={"na#me": "Alice", "email": unique_email, "age": 28}
+        json={"name": "Alice", "email": unique_email, "age": 28}
     )
     # Check if the response status code is 201 (Created) and if the response JSON contains the expected fields and values. If any assertion fails, it will raise an AssertionError with a descriptive message.
     assert response.status_code == 201, f"Expected status code 201, got {response.status_code}"
